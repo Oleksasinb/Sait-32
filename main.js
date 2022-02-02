@@ -14,46 +14,20 @@
 // let rez3 = pow(3,5)
 // let rez4 = pow(12,12)
 
-for (let i = 0; i <= 10; i++ ) {
-    console.log(i)
+const body = document.getElementById("body")
+body.innerHTML=body.innerHTML + '<div class=block></div>'
+const block = document.querySelector(".block")
+block.style.width='200px'
+block.style.height='200px'
+block.style.background='red'
+let array = ['#FF0000', '#00FF00', '#0000FF']
+let temp=0
+change.onclick = function() {
+    temp=temp + 1
+    let x = document.getElementById("add").value
+    if (!array.includes(x)) {
+        array.push(x)
+        temp=array.length -1
+    }
+    block.style.background=array[temp % array.length]
 }
-for (let i = 1; i <= 10; i++) {
-    i++
-    console.log(i)
-}
-task3.onclick = function() {
-let n=+prompt('n?')
-num=2
-loop:for (let i = 2; i <= n; i++) {
-for (let temp = 2; temp < i; temp++) {
-if (i % temp == 0) continue loop;
-}
-alert(i)
-}}
-task1.onclick = function() {
-    let a=+prompt('a?')
-let b=+prompt('b?')
-function min(a,b) {
-    if ( a > b) {
-        actual=b
-    } else {
-    if ( b > a) {
-        actual=a
-    } else{actual='error'}}
-    return actual
-}
-alert('min=' + min(a,b))}
-task2.onclick = function() {
-let x=+prompt('x?')
-function pow(x,n) {
-    return x**n
-}
-alert ('x**n=' + pow(x,n))}
-task4.onclick = function() {
-let target= +prompt('N?')
-let newr=1
-let newa=+prompt('A?')
-for (let tempnum = 1; tempnum <= target; tempnum++ ) {
-    newr=newr+newa**tempnum
-}
-alert (newr)}
